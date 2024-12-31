@@ -13,5 +13,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: getsentry/action-validate-devservices-config@6f30f272608bfd994e6aa36af6b1e200c1408062
+      - uses: getsentry/action-validate-devservices-config@03fcddd694b4c24209df7eb32eb7edf761dc5afb
 
