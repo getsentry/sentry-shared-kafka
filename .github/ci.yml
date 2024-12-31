@@ -1,0 +1,17 @@
+name: 'CI'
+description: 'Validates sentry-shared-kafka devservices config'
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: getsentry/action-validate-devservices-config@latest
+
