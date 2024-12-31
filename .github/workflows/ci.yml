@@ -13,5 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: getsentry/action-validate-devservices-config@03fcddd694b4c24209df7eb32eb7edf761dc5afb
+      - uses: actions/checkout@v4
+        name: Checkout repository
+      - uses: getsentry/action-validate-devservices-config@302d5dafdd2510d45c56201c807bda6fb7cc3ff6
+        name: Validate devservices config
 
