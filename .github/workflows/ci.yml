@@ -15,6 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Checkout repository
-      - uses: getsentry/action-validate-devservices-config@302d5dafdd2510d45c56201c807bda6fb7cc3ff6
+      - uses: getsentry/action-validate-devservices-config@bccd5b533b087449b2a15a2ad3bb1729223f6a5a
         name: Validate devservices config
 
