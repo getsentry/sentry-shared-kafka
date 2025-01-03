@@ -3,7 +3,7 @@ x-sentry-service-config:
   service_name: kafka
   dependencies:
     kafka:
-      description: "A distributed data store optimized for ingesting and processing streaming data in real-time"
+      description: "A distributed data store optimized for ingesting and processing streaming data in real-tim"
   modes:
     default: [kafka]
 
