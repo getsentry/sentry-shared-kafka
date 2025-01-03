@@ -10,11 +10,30 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  files-changed:
+    name: detect what files changed
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    outputs:
+      devservices: ${{ steps.changes.outputs.devservices }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for backend file changes
+        uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          token: ${{ github.token }}
+          filters: |
+            devservices:
+              - 'devservices/**'
+  ci:
+    runs-on: ubuntu-24.04
+    needs: files-changed
+    if: ${{ needs.files-changed.outputs.devservices == 'true' }}
     steps:
       - uses: actions/checkout@v4
         name: Checkout repository
-      - uses: getsentry/action-validate-devservices-config@bccd5b533b087449b2a15a2ad3bb1729223f6a5a
+      - uses: getsentry/action-validate-devservices-config@main
         name: Validate devservices config
 
