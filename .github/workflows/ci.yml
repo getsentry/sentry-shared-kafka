@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check for backend file changes
+      - name: Check for file changes
         uses: dorny/paths-filter@v3
         id: changes
         with:
@@ -25,6 +25,7 @@ jobs:
           filters: |
             devservices:
               - 'devservices/**'
+              - '.github/workflows/ci.yml'
   ci:
     runs-on: ubuntu-24.04
     needs: files-changed
