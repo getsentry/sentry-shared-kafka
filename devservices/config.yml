@@ -41,7 +41,6 @@ services:
       KAFKA_AUTHORIZER_CLASS_NAME: org.apache.kafka.metadata.authorizer.StandardAuthorizer
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: true
       KAFKA_SUPER_USERS: User:admin
-      KAFKA_LOG4J_LOGGERS: kafka.authorizer.logger=DEBUG
     ulimits:
       nofile:
         soft: 4096
