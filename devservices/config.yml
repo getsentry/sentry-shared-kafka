@@ -19,6 +19,7 @@ services:
       # https://docs.confluent.io/platform/current/installation/docker/config-reference.html#cp-kakfa-example
       KAFKA_PROCESS_ROLES: broker,controller
       KAFKA_CONTROLLER_QUORUM_VOTERS: 1001@127.0.0.1:29093
+      KAFKA_BROKER_SESSION_TIMEOUT_MS: 6000
       KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_NODE_ID: 1001
       CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
